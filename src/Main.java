@@ -32,32 +32,31 @@ public class Main {
     public static void task2() {
         int[] arr = generateRandomArray();
         System.out.println("Задача 2");
-        int minPay = 200_000;
-        int maxPay = 100_000;
+        int minPay = arr[0];
+        int maxPay = arr[0];
         for (final int current : arr) {
             if (minPay > current) {
                 minPay = current;
             }
-        }
-        System.out.println("Минимальная сумма трат за день составила " + minPay + " рублей");
-        for (final int current : arr) {
             if (maxPay < current) {
                 maxPay = current;
             }
         }
-        System.out.println("Максимальная сумма трат за день составила " + maxPay + " рублей");
+        System.out.println("Минимальная сумма трат за день составила " + minPay + " рублей. " +
+                "Максимальная сумма трат за день составила " + maxPay + " рублей.");
     }
 
     public static void task3() {
         int[] arr = generateRandomArray();
         System.out.println("Задача 3");
-        double sum = 0.0;
+        int sum = 0;
         int daysInMonth = 30;
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
-        double average = sum / daysInMonth;
-        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
+        double average = (double) sum / daysInMonth;
+        System.out.printf("Средняя сумма трат за месяц составила %.2f рублей", average);
+        System.out.println();
     }
 
     public static void task4() {
